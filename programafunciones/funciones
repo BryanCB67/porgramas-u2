@@ -1,0 +1,40 @@
+Calculadora de Funciones de Membresia en C
+
+Este repositorio contiene un programa implementado en lenguaje C utilizando Visual Studio para calcular el valor de pertenencia difusa para diferentes geometrias de conjuntos
+
+Caracteristicas de la Logica
+
+Diversidad Matematica: Evalua ecuaciones para formas de tipo Triangular Gamma L y Trapezoidal segun los requisitos del usuario
+Control Estructurado: Utiliza la seleccion multiple con switch case para aislar las solicitudes de parametros de cada funcion especifica
+Operaciones de Precision: Procesa las variables bajo el tipo double para garantizar la precision de las divisiones decimales finales
+
+Estructura del Codigo
+
+La arquitectura del programa gestiona los intervalos matematicos mediante sentencias condicionales de la libreria stdio h
+
+```cpp
+#include <stdio.h>
+
+int main() {
+    int opcion_usuario;
+    double x, a, b, c, d, m, resultado = 0.0;
+
+    printf("Elige una funcion (1-4): ");
+    scanf("%d", &opcion_usuario);
+
+    printf("Ingrese el valor de x a evaluar: ");
+    scanf("%lf", &x);
+
+    switch (opcion_usuario) {
+        case 1:
+            scanf("%lf %lf %lf", &a, &m, &b);
+            if (x <= a || x > b) resultado = 0.0;
+            else if (x <= m)     resultado = (x - a) / (m - a);
+            else                 resultado = (b - x) / (b - m);
+            break;
+    }
+
+    printf("\nResultado u(x) = %f\n", resultado);
+    return 0;
+}
+```
