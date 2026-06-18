@@ -1,0 +1,16 @@
+Hola Mundo en C++
+
+Programa introductorio desarrollado en Visual Studio para comprobar la correcta configuración del entorno de desarrollo y la salida estándar por consola.
+
+Estructura del Código
+
+El archivo principal utiliza la función estándar `printf` para enviar texto a la terminal del sistema.
+
+```cpp
+#include <stdio.h>
+
+int main() {
+    printf("Hola Mundo\n");
+    return 0;
+}
+```

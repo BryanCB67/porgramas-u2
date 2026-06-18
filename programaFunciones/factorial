@@ -1,0 +1,44 @@
+# Cálculo de Factorial en C++
+
+Este proyecto implementa una solución en C++ para calcular el factorial de un número entero positivo ingresado por consola. El código está diseñado para ejecutarse en entornos compatibles con la librería estándar de C y Visual Studio.
+
+Características del Programa
+
+Filtro de Entrada: Implementa un bucle condicional para impedir el procesamiento de valores negativos, forzando al usuario a ingresar un dato válid
+Manejo de Tipos: Utiliza la representación long long para el acumulador matemático con el fin de ampliar el límite físico de bits y retrasar el desbordamiento de memoria overflow que ocurre de forma natural con factoriales altos Estructura de Control Divide la lógica mediante un caso base para el cero y un ciclo iterativo incremental para el resto de los números.
+
+Estructura del Código
+
+El flujo del programa utiliza funciones de `<stdio.h>` para optimizar el rendimiento de la entrada y salida de datos.
+
+```cpp
+#include <stdio.h>
+
+int main() {
+    int n;
+    long long factorial = 1;
+
+    printf("Introduce un numero entero positivo: ");
+    scanf("%d", &n);
+
+    // Bloqueo de flujo ante valores inválidos
+    while (n < 0) {
+        printf("No definido.\n");
+        scanf("%d", &n);
+    }
+
+    // Lógica iterativa
+    if (n == 0) {
+        factorial = 1;
+    } else {
+        for (int i = 1; i <= n; ++i) {
+            factorial *= i;
+        }
+    }
+
+    printf("Resultado: %lld\n", factorial);
+    return 0;
+}
+```
+
+
