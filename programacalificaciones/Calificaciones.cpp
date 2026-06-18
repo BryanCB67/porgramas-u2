@@ -1,48 +1,48 @@
-#include <iostream>
-
-using namespace std;
+#include <stdio.h> // Libreria para entrada y salida estandar de datos por consola
 
 int main() {
-    // Declaración de variables para las calificaciones
+    // Declaracion de variables para almacenar los puntajes de las evaluaciones
     float trabajos, portafolio, examen, calificacionFinal;
 
-    cout << "=== CALCULADORA DE CALIFICACIONES ===" << endl;
+    printf("=== CALCULADORA DE CALIFICACIONES ===\n");
 
-    // Solicitar al usuario las calificaciones (escala 0 - 100)
-    cout << "Ingresa la calificacion de Trabajos en clase (0-100): ";
-    cin >> trabajos;
+    // Solicitar la calificacion de los trabajos del estudiante
+    printf("Ingresa la calificacion de Trabajos en clase (0-100): ");
+    scanf("%f", &trabajos); // Lee la entrada como valor de punto flotante
     
-    cout << "Ingresa la calificacion del Portafolio (0-100): ";
-    cin >> portafolio;
+    // Solicitar el puntaje acumulado en el portafolio de evidencias
+    printf("Ingresa la calificacion del Portafolio (0-100): ");
+    scanf("%f", &portafolio);
     
-    cout << "Ingresa la calificacion del Examen (0-100): ";
-    cin >> examen;
+    // Solicitar la calificacion obtenida en el examen escrito
+    printf("Ingresa la calificacion del Examen (0-100): ");
+    scanf("%f", &examen);
 
-    // Calcular la calificación final aplicando los porcentajes
-    // Trabajos (30%), Portafolio (30%), Examen (40%)
+    // Operacion matematica para calcular el promedio ponderado segun los criterios
+    // Aplica los pesos especificos de treinta por ciento y cuarenta por ciento
     calificacionFinal = (trabajos * 0.30) + (portafolio * 0.30) + (examen * 0.40);
 
-    cout << "Calificacion Final: " << calificacionFinal << "/100" << endl;
+    printf("Calificacion Final: %.2f/100\n", calificacionFinal);
 
-    // Evaluar la calificación final usando if y else if
+    // Estructura condicional anidada para determinar la letra o estatus del alumno
     if (calificacionFinal >= 90) {
-        cout << "Estado: APROBADO (Excelente)" << endl;
+        printf("Estado: APROBADO (Excelente)\n");
     } 
     else if (calificacionFinal >= 80) {
-        cout << "Estado: APROBADO (Muy Bueno)" << endl;
+        printf("Estado: APROBADO (Muy Bueno)\n");
     } 
     else if (calificacionFinal >= 70) {
-        cout << "Estado: APROBADO (Bueno)" << endl;
+        printf("Estado: APROBADO (Bueno)\n");
     } 
     else if (calificacionFinal >= 60) {
-        cout << "Estado: APROBADO (Suficiente)" << endl;
+        printf("Estado: APROBADO (Suficiente)\n");
     } 
     else {
-        // Cualquier calificación menor a 60 cae en este bloque
-        cout << "Estado: REPROBADO" << endl;
+        // Bloque de control final para capturar todos los casos menores a sesenta
+        printf("Estado: REPROBADO\n");
     }
 
-    cout <<"=====================================" << endl;
+    printf("=====================================\n");
 
-    return 0;
+    return 0; // Finaliza la ejecucion del programa y retorna cero al sistema
 }

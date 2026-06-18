@@ -1,26 +1,28 @@
-#include <iostream>
-
-using namespace std;
+#include <stdio.h> // Libreria para entrada y salida estandar de datos por consola
 
 int main() {
     int valorinicio, valorfinal; 
-    int suma = 0; // Variable para almacenar la suma de los números 
+    int suma = 0; // Variable para almacenar la suma acumulada de los numeros 
+    int inicioOriginal; // Variable de respaldo para guardar el valor inicial antes del bucle
 
-    // Solicitar los datos al usuario
-    cout << "Ingrese el valor inicial: ";       
-    cin >> valorinicio;
+    // Solicitar los datos de rango al usuario
+    printf("Ingrese el valor inicial: ");       
+    scanf("%d", &valorinicio);
 
-    cout << "Ingrese el valor final: ";        
-    cin >> valorfinal;
+    printf("Ingrese el valor final: ");        
+    scanf("%d", &valorfinal);
 
-    // Calcular la suma de los números en el rango
+    // Guardar el numero original para poder mostrarlo correctamente al final del programa
+    inicioOriginal = valorinicio;
+
+    // Calcular la suma de los numeros en el rango establecido
     while (valorinicio <= valorfinal) {
-        suma += valorinicio;
-        valorinicio++; // Incrementar el valor inicial para avanzar en el rango
+        suma += valorinicio; // Agrega el valor actual al acumulador total
+        valorinicio++; // Incrementar el valor inicial para avanzar en el rango y evitar un bucle infinito
     }
 
-    // Mostrar el resultado
-    cout << "La suma de los números del " << valorinicio << " al " << valorfinal << " es: " << suma << endl;
+    // Mostrar el resultado final en la terminal usando las variables de control
+    printf("La suma de los numeros del %d al %d es: %d\n", inicioOriginal, valorfinal, suma);
 
-    return 0;
+    return 0; // Retorno de codigo exitoso al sistema operativo
 }
