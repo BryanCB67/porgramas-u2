@@ -1,0 +1,58 @@
+Calculadora Simple en C
+
+Este repositorio contiene un programa desarrollado en lenguaje C utilizando Visual Studio para realizar operaciones matematicas basicas mediante una interfaz de consola
+
+Caracteristicas de la Logica
+
+Entrada Flexible: Utiliza variables de tipo double para soportar calculos numericos tanto con valores enteros como decimales
+Control de Flujo Efectivo: Implementa la estructura switch para evaluar el operador seleccionado y saltar directamente al caso correspondiente
+Validacion de Seguridad: Incluye una condicion if else para bloquear las divisiones cuando el segundo numero ingresado sea igual a cero
+
+Estructura del Codigo
+
+El procesamiento de los datos se gestiona mediante casos de seleccion utilizando las funciones de la libreria stdio h
+
+```cpp
+#include <stdio.h>
+
+int main() {
+    double num1, num2; 
+    char operacion; 
+
+    printf("=== CALCULADORA SIMPLE ===\n");
+
+    printf("Ingresa el primer numero: ");
+    scanf("%lf", &num1); 
+
+    printf("Ingresa el segundo numero: ");
+    scanf("%lf", &num2);
+
+    printf("Selecciona la operacion (+, -, *, /): ");
+    scanf(" %c", &operacion); 
+
+    switch (operacion) {
+        case '+':
+            printf("Resultado: %f\n", num1 + num2);
+            break; 
+        case '-':
+            printf("Resultado: %f\n", num1 - num2);
+            break;
+        case '*':
+            printf("Resultado: %f\n", num1 * num2);
+            break;
+        case '/':
+            if (num2 != 0) {
+                printf("Resultado: %f\n", num1 / num2);
+            } else {
+                printf("Error: Division por cero no es permitida\n");
+            }
+            break;
+        default:
+            printf("Operacion no valida Por favor selecciona una operacion correcta\n");
+    }
+
+    printf("===\n");
+
+    return 0; 
+}
+```
