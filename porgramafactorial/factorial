@@ -1,0 +1,43 @@
+Calculo de Factorial en C
+
+Este repositorio contiene un programa desarrollado en lenguaje C utilizando Visual Studio para calcular el factorial de un numero entero positivo introducido por consola
+
+Caracteristicas de la Logica
+
+* Filtro de Entrada: Implementa un bucle repetitivo while para obligar al usuario a ingresar solo datos validos mayores o iguales a cero
+* Capacidad Extendida: Usa variables de tipo long long para soportar factoriales de numeros grandes sin generar fallas de desbordamiento de memoria
+* Control de Flujo: Separa el caso base matematico mediante una estructura condicional if else antes de iniciar las operaciones iterativas
+
+Estructura del Codigo
+
+El procesamiento matematico se gestiona de forma secuencial utilizando las funciones de la libreria stdio h
+
+```cpp
+#include <stdio.h>
+
+int main() {
+    int n;
+    long long factorial = 1;
+
+    printf("Introduce un numero entero positivo: ");
+    scanf("%d", &n);
+
+    while (n < 0) {
+        printf("El factorial para numeros negativos no esta definido.\n");
+        printf("Introduce un numero entero positivo: ");
+        scanf("%d", &n);
+    }
+
+    if (n == 0) {
+        factorial = 1;
+    } else {
+        for (int i = 1; i <= n; ++i) {
+            factorial *= i;
+        }
+    }
+
+    printf("El factorial de %d es: %lld\n", n, factorial);
+
+    return 0;
+}
+```
