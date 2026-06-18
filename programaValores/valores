@@ -1,0 +1,40 @@
+Suma de Rangos Numericos en C
+
+Este repositorio contiene un programa desarrollado en lenguaje C utilizando Visual Studio para obtener la suma acumulativa de todos los numeros enteros dentro de un rango definido por el usuario
+
+Caracteristicas de la Logica
+
+* Acumulacion Matematica: Utiliza un bucle repetitivo while para recorrer los valores del rango de forma secuencial y sumarlos
+* Control de Variables: Resguarda el valor inicial ingresado en una variable de respaldo para garantizar que el reporte impreso final muestre los datos correctos
+* Evitacion de Bucles Infinitos: Incrementa el contador principal en cada vuelta para asegurar el cierre correcto del ciclo
+
+Estructura del Codigo
+
+El procesamiento de los datos se gestiona de forma lineal utilizando las funciones de la libreria stdio h
+
+```cpp
+#include <stdio.h>
+
+int main() {
+    int valorinicio, valorfinal; 
+    int suma = 0; 
+    int inicioOriginal; 
+
+    printf("Ingrese el valor inicial: ");       
+    scanf("%d", &valorinicio);
+
+    printf("Ingrese el valor final: ");        
+    scanf("%d", &valorfinal);
+
+    inicioOriginal = valorinicio;
+
+    while (valorinicio <= valorfinal) {
+        suma += valorinicio; 
+        valorinicio++; 
+    }
+
+    printf("La suma de los numeros del %d al %d es: %d\n", inicioOriginal, valorfinal, suma);
+
+    return 0; 
+}
+```
