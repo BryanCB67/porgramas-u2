@@ -1,17 +1,16 @@
 Hola Mundo en C++
 
-Este repositorio contiene un programa básico en C++ desarrollado en Visual Studio. El objetivo del proyecto es realizar el codigo y que imprima en la terminal hola
-mundo
+Programa introductorio desarrollado en Visual Studio para comprobar la correcta configuración del entorno de desarrollo y la salida estándar por consola.
 
 Estructura del Código
-El archivo principal utiliza la librería `<iostream>` para la gestión de flujos de entrada y salida estándar.
 
-cpp
-include <iostream>
+El archivo principal utiliza la función estándar `printf` para enviar texto a la terminal del sistema.
 
-using namespace std;
+```cpp
+#include <stdio.h>
 
 int main() {
-    cout << "Hola Mundo" << endl;
+    printf("Hola Mundo\n");
     return 0;
 }
+```
