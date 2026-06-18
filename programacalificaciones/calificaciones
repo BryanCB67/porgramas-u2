@@ -1,0 +1,56 @@
+Calculadora de Calificaciones en C
+
+Este repositorio contiene un programa desarrollado en lenguaje C utilizando Visual Studio para calcular el promedio ponderado de un alumno y determinar su estatus final
+
+Caracteristicas de la Logica
+
+Ponderacion de Datos: Multiplica las notas ingresadas por sus respectivos porcentajes acumulando los pesos de treinta por ciento y cuarenta por ciento para la calificacion final
+Clasificacion Condicional: Evalua el promedio general mediante una estructura de condiciones encadenadas if else if para asignar una categoria de rendimiento
+Precision en Salida: Configura el formato de impresion con limitacion de decimales para mostrar una lectura limpia de la puntuacion en la terminal
+
+Estructura del Codigo
+
+El procesamiento de los datos se gestiona mediante flujos de decision utilizando las funciones de la libreria stdio h
+
+```cpp
+#include <stdio.h>
+
+int main() {
+    float trabajos, portafolio, examen, calificacionFinal;
+
+    printf("=== CALCULADORA DE CALIFICACIONES ===\n");
+
+    printf("Ingresa la calificacion de Trabajos en clase (0-100): ");
+    scanf("%f", &trabajos); 
+    
+    printf("Ingresa la calificacion del Portafolio (0-100): ");
+    scanf("%f", &portafolio);
+    
+    printf("Ingresa la calificacion del Examen (0-100): ");
+    scanf("%f", &examen);
+
+    calificacionFinal = (trabajos * 0.30) + (portafolio * 0.30) + (examen * 0.40);
+
+    printf("Calificacion Final: %.2f/100\n", calificacionFinal);
+
+    if (calificacionFinal >= 90) {
+        printf("Estado: APROBADO (Excelente)\n");
+    } 
+    else if (calificacionFinal >= 80) {
+        printf("Estado: APROBADO (Muy Bueno)\n");
+    } 
+    else if (calificacionFinal >= 70) {
+        printf("Estado: APROBADO (Bueno)\n");
+    } 
+    else if (calificacionFinal >= 60) {
+        printf("Estado: APROBADO (Suficiente)\n");
+    } 
+    else {
+        printf("Estado: REPROBADO\n");
+    }
+
+    printf("=====================================\n");
+
+    return 0; 
+}
+```
